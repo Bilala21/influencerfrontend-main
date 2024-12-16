@@ -1,44 +1,44 @@
 export const links = [
     {
         'label': "Home",
-        'url': "/home",
+        'url': "/",
     },
     {
         'label': "How it Works",
-        'url': "/",
+        'url': "/howitworks",
     },
     {
         'label': "Market",
-        'url': "/",
+        'url': "/qq",
     },
     {
         'label': "Support",
-        'url': "/",
+        'url': "/qqq",
     },
     {
         'label': "Promiose Bond",
-        'url': "/",
+        'url': "/qqq",
     },
     {
         'label': "Contact",
-        'url': "/",
+        'url': "/about-us",
     },
 ]
 export const become_a_seller =
 {
     'label': "Become a Seller",
-    'url': "/",
+    'url': "/qqq",
 }
 export const login = {
     'label': "Log In",
-    'url': "/",
+    'url': "/signin",
 }
 export const sign_up = {
     'label': "Sign Up",
-    'url': "/",
+    'url': "/signup",
 }
 export const categories = {
     'label': "Categories",
-    'url': "/",
+    'url': "/qqqq",
 }
 

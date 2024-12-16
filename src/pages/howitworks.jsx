@@ -8,10 +8,12 @@ import bsns from "../bussinessmen.png";
 import overlay from "../overlayimg.png"
 
 import { Link } from "react-router-dom";
+import { HeaderComponent } from "../components/header/header.component";
+import { FooterComponent } from "../components/footer/footer.component";
 export default function HowItWorks() {
     return (
         <div className="w-full">
-            <HomeHeader />
+            <HeaderComponent/>
             <div className="max-w-[1440px] mx-auto">
                 <div className="w-full flex flex-col gap-[40px] px-[20px] py-[40px] xl:px-[30px]">
                     <div className="w-full lg:w-1/2">
@@ -389,7 +391,7 @@ export default function HowItWorks() {
                     </div>
                 </div>
             </div>
-            <HomeFooter />
+            <FooterComponent/>
         </div>
     )
 }

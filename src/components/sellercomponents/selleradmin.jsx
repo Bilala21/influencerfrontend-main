@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import avatar from "../../avatar.webp"
 import { useDropzone } from 'react-dropzone';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../baseURL";
+import { menu_itmes } from "./json-data";
 
 export default function SellerAdminHeader({ children }) {
+     const base_path_icon = "/assets/images/icons"
     const location = useLocation();
     const navigate = useNavigate();
     const [bondpopup, setBondPopup] = useState(false)
@@ -190,10 +192,10 @@ export default function SellerAdminHeader({ children }) {
     return (
         <>
             <ToastContainer containerId="buyeradmin" limit={1} />
-            <div className="w-full relative h-full  flex">
-                <div className="xl:w-[20%]  border-r hidden xl:flex flex-col px-[20px]  py-[40px] justify-between">
-                    <div className="flex flex-col gap-[10px]">
-                        <div className="lg:w-fit">
+            <aside className="w-full relative h-full  flex">
+                <div className="xl:w-[20%] hidden xl:flex flex-col justify-between">
+                    <div className="flex flex-col">
+                        <div className="lg:w-fit pl-[30px] pt-5">
                             <svg width="200" height="40" viewBox="0 0 258 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.56817 24.541V20.7178H12.6541C14.086 20.7178 15.186 20.3849 15.9538 19.7191C16.732 19.0533 17.1212 18.1014 17.1212 16.8635V16.8322C17.1212 15.6047 16.732 14.658 15.9538 13.9922C15.186 13.3264 14.086 12.9935 12.6541 12.9935H2.56817V9.09233H13.4946C15.3105 9.09233 16.8773 9.41482 18.1951 10.0598C19.5129 10.6944 20.5298 11.5891 21.2458 12.7438C21.9618 13.8882 22.3198 15.2302 22.3198 16.7698V16.801C22.3198 18.3303 21.9618 19.6775 21.2458 20.8427C20.5298 22.0078 19.5129 22.9181 18.1951 23.5735C16.8773 24.2185 15.3105 24.541 13.4946 24.541H2.56817ZM0 31.6099V9.09233H5.12078V31.6099H0Z" fill="#1DBF73" />
                                 <path d="M24.779 31.6099V14.9909L29.7441 15.0065V18.3615H29.8375C30.1799 17.186 30.8077 16.2757 31.7208 15.6307C32.634 14.9753 33.7598 14.6476 35.0984 14.6476C35.4097 14.6476 35.7054 14.6684 35.9856 14.71C36.2761 14.7412 36.5303 14.7828 36.7482 14.8349V18.8609C36.4785 18.7984 36.1672 18.7516 35.8144 18.7204C35.4719 18.6892 35.1191 18.6736 34.756 18.6736C33.7391 18.6736 32.8519 18.8609 32.0944 19.2354C31.3473 19.6099 30.7662 20.1717 30.3512 20.9207C29.9465 21.6593 29.7441 22.58 29.7441 23.6827V31.6099H24.779Z" fill="#1DBF73" />
@@ -210,7 +212,28 @@ export default function SellerAdminHeader({ children }) {
                             </svg>
 
                         </div>
-                        <Link
+                        <div className="pr-7">
+                            <nav className="seller-menus">
+                                <ul>
+                                    <li className="h-10 mt-4 pl-[30px]">Start</li>
+                                    {
+                                        menu_itmes.map((menu) => {
+                                            return (
+                                                menu?.heading ? <li key={menu?.heading} className={`${menu.heading} h-[55px] text-primary-gray-500 mt-4 mb-1 flex items-center gap-x-4 pl-[30px] text-base font-medium rounded-e`}>{menu?.heading}</li> :
+                                                    <li key={menu?.label}>
+                                                        <NavLink to={menu.link} className={`h-[55px] mb-1 flex items-center gap-x-4 pl-[30px] text-[17px] font-medium rounded-e`}>
+                                                            <img src={menu.icon} alt="icon" />
+                                                            {menu.label}</NavLink>
+                                                    </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+
+
+                        {/* <Link
                             to="/buyerdashboard"
                             className={`flex gap-[10px] rounded-[10px] items-center py-[10px] px-[20px] text-[18px] ${location.pathname === '/buyerdashboard' ? 'bg-[#f6f6f6] text-[#1DBF73]' : 'text-[#74767E]'}`}
                         >
@@ -273,11 +296,11 @@ export default function SellerAdminHeader({ children }) {
 
 
                             Billing & Payments
-                        </Link>
-                       
+                        </Link> */}
+
 
                     </div>
-                    <div className="flex flex-col gap-[10px]">
+                    {/* <div className="flex flex-col gap-[10px]">
                         <Link
                             to="/settings"
                             className={`flex gap-[10px] rounded-[10px] items-center py-[10px] px-[20px] text-[18px] ${location.pathname === '/settings' ? 'bg-white text-[#1DBF73]' : 'text-[#74767E]'}`}
@@ -305,23 +328,23 @@ export default function SellerAdminHeader({ children }) {
 
                             Logout
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="xl:w-[80%] w-full gap-[20px] px-[20px] py-[40px] flex flex-col">
-                    <div className="w-full rounded-[10px] px-[20px] py-[20px] flex justify-between items-center bg-white">
-                        <div className="xl:hidden block hover:cursor-pointer" onClick={() => setMenuPopup(!menupopup)}>
-                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 12H20" stroke="#2563EB" stroke-width="2" stroke-linecap="round"></path> <path d="M5 17H20" stroke="#2563EB" stroke-width="2" stroke-linecap="round"></path> <path d="M5 7H20" stroke="#2563EB" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+                <div className="flex-1 flex flex-col">
+                    <div className="w-full rounded-[10px] pr-[20px] py-[20px] flex justify-between items-center bg-white">
+                        <div className="flex items-center flex-1 max-w-[700px] gap-x-10">
+                            <div className="block hover:cursor-pointer" onClick={() => setMenuPopup(!menupopup)}>
+                              <img src={`${base_path_icon}/sidebar-control.svg`} alt="icon" />
+                            </div>
+                            <div className="border rounded-lg px-4 flex-1 w-full flex items-center justify-between">
+                                <input type="text" placeholder="What service are you looking for today?" className="text-[14px] text-primary-dark py-4 focus:outline-none w-[90%]"/>
+                                <img src={`${base_path_icon}/search.svg`} alt="icon" />
+                            </div>
                         </div>
-                        <h1 className="text-[#1DBF73] text-[24px] font-semibold xl:flex hidden">
-                            {location.pathname
-                                .replace('/', '')
-                                .split('/')[0]
-                                .charAt(0).toUpperCase() +
-                                location.pathname.slice(2)}
-                        </h1>
                         <div className="flex items-center gap-[10px]">
 
                             <div className="flex items-center" onClick={handleSwitchChange}>
+                            <a class="bg-primary-dark text-white rounded text-base font-medium text-center py-2 w-[114px] lg:block hidden" to="/signup">Sign Up</a>
                                 <label htmlFor="account-switch" className="mr-2 text-sm font-medium">
                                     Switch to Issuer
                                 </label>
@@ -575,7 +598,7 @@ export default function SellerAdminHeader({ children }) {
                                         <path d="M9.10102 3C10.3636 1.76281 12.0927 1 14 1C17.866 1 21 4.13401 21 8C21 9.90734 20.2372 11.6365 18.9999 12.899M6.5 12L8 11V16.5M6.5 16.5H9.5M15 14C15 17.866 11.866 21 8 21C4.13401 21 1 17.866 1 14C1 10.134 4.13401 7 8 7C11.866 7 15 10.134 15 14Z" stroke={`${location.pathname === '/buyersponsorbond' ? '#1DBF73' : '#74767E'}`} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
 
-                               Promise Bond
+                                    Promise Bond
                                 </Link>
 
                                 <Link
@@ -674,7 +697,7 @@ export default function SellerAdminHeader({ children }) {
                         </div>
                     )
                 }
-            </div>
+            </aside>
         </>
     );
 }

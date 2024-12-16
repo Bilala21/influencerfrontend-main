@@ -39,28 +39,101 @@
 }
 
 .active {
-  border-color: #1DBF73;
+  border-color: #1dbf73;
 }
-.container{
-  max-width: 1600px;
+
+.container {
+  /* max-width: 1600px; */
 }
+
 body .Dropdown-control {
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 20px;
-  box-shadow: 0px 6px 15px 0px #404F680D;
+  box-shadow: 0px 6px 15px 0px #404f680d;
 }
 
 body .Dropdown-menu {
   border-radius: 20px;
 }
+body footer .Dropdown-control {
+  border-radius: 5px;
+  background: #ffffff25;
+  border-color: transparent;
+  color: #ffffff6f;
+}
 
 body .Dropdown-arrow {
-top: 20px;
-right: 20px;
+  top: 20px;
+  right: 20px;
 }
-.active.active-media{
+
+.max-width {
+  max-width: 1900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.active.active-media {
   background: #ffffff25;
+}
+@media (max-width: 992px) {
+  body footer .Dropdown-control {
+    flex-grow: 1;
+  }
+  header .open {
+    display: flex;
+  }
+  .banner h1 {
+    line-height: 41px;
+  }
+}
+header .active {
+  border: none;
+  color: #1dbf73;
+}
+.seller-menus .active{
+  background: #282c34;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  header .links {
+    padding-top: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 500ms;
+  }
+  header .links.open {
+    padding-top: 40px;
+    max-height: 500px;
+    overflow: visible;
+  }
+  .flex-d-col {
+    flex-direction: column;
+  }
+  .xl-d-none {
+    display: none;
+  }
+  .xl-w-full {
+    width: 100%;
+  }
+  .xl-text-left{
+    text-align: left;
+  }
+  .xl-py-2{
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+  .xl-gap-x{
+    gap: 0px;
+  }
+  .xl-d-block{
+    display: block;
+  }
+  .xl-pt-5{
+    padding-bottom: 20px;
+  }
+
 }

@@ -56,7 +56,7 @@ export default function Dashboard() {
                         <MoonLoader color="#6B33E3" size={100} />
                     </div> : <>
                         <NotificationCards loading={loading} state={state} />
-                        <div className="grid grid-cols-1 lg:grid-cols-5">
+                        <div className="grid grid-cols-1 lg:grid-cols-5 bg-white">
                             <div className=" lg:col-span-3">
                                 <LineChartComponent />
                             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 const data = [
@@ -6,28 +7,28 @@ const data = [
   { name: "Pending", value: 40 },
 ];
 
-const COLORS = ['#0E2C6C','#0E2C6C3D']; 
+const COLORS = ['#0E2C6C', '#0E2C6C3D'];
 
 const SellerHalfPieChartComponent = () => {
   return (
     <div className="w-full p-6">
-      
-      <div className="flex flex-col items-center mb-6">
-        <h2 className="text-black text-2xl font-semibold mb-1">Withdrawable vs Pending</h2>
-        <p className="text-[#1C1C1CA3]">All time payment withdrawal vs pending</p>
+
+      <div className="flex items-center justify-between border-b pb-4">
+        <h2 className="text-primary-dark text-[17px] font-medium">Withdraw-able vs Pending</h2>
+        <NavLink to='/dfsds' className=" underline text-[14px] text-[#6440FB]">View all</NavLink>
       </div>
 
-     
-      <ResponsiveContainer width="100%" height={400}>
+
+      <ResponsiveContainer width="100%" height={478}>
         <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            startAngle={180}  
-            endAngle={0}    
-            innerRadius={60}  
-            outerRadius={80}  
+            startAngle={180}
+            endAngle={0}
+            innerRadius={60}
+            outerRadius={80}
             paddingAngle={5}
             dataKey="value"
           >
@@ -39,18 +40,24 @@ const SellerHalfPieChartComponent = () => {
         </PieChart>
       </ResponsiveContainer>
 
-    
-      <div className="flex justify-center mt-4 space-x-4">
-      
-        <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-[#0E2C6C] rounded-full"></div>
-          <p className="text-sm text-gray-700">Withdrawable</p>
+
+      <div className="flex items-center justify-between">
+
+        <div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-primary-green rounded-full"></div>
+            <span>Withdrawable</span>
+          </div>
+          <div className="text-[#6B7177]">40%</div>
         </div>
 
-     
-        <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-[#0E2C6C3D] opacity-48 rounded-full"></div>
-          <p className="text-sm text-gray-700">Pending Payment</p>
+
+        <div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-[#FFEDE8] opacity-48 rounded-full"></div>
+            <span>Pending Payment</span>
+          </div>
+          <div className="text-[#6B7177]">60%</div>
         </div>
       </div>
     </div>

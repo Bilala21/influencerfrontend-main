@@ -50,23 +50,24 @@ export default function SellerDashboard() {
     return (
         <>
             <ToastContainer containerId="containerE" limit={1} />
-            <div className="w-full  flex  flex-col">
-                <div className="w-full  flex gap-[20px] flex-col">
-
+            <div className="bg-primary-gray-300 p-[60px] pt-8">
+                <div className="w-full">
+                    <h1 className="font-bold text-[32px]">Dashboard</h1>
+                    <div className="text-base text-primary-dark mb-14">Your hub for managing projects, bonds, and account activity.</div>
                     <SellerNotificationCards loading={loading} state={state} />
-                    <div className="grid grid-cols-1 lg:grid-cols-5">
-                        <div className=" lg:col-span-3">
+                    <div className="grid grid-cols-2 lg:grid-cols-5 mt-[30px] gap-[30px]">
+                        <div className=" lg:col-span-3 bg-white">
                             <SellerLineChartComponent />
                         </div>
-                        <div className=" lg:col-span-2">
+                        <div className=" lg:col-span-2 bg-white ">
                             <SellerPieChartComponent state={state} loading={loading} />
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-5">
-                        <div className=" lg:col-span-2">
+                    <div className="grid grid-cols-2 lg:grid-cols-12 mt-[30px] gap-[30px]">
+                        <div className=" lg:col-span-4 bg-white ">
                             <SellerHalfPieChartComponent state={state} loading={loading} />
                         </div>
-                        <div className=" lg:col-span-3">
+                        <div className=" lg:col-span-8 bg-white ">
                             <SellerMissionStatsChart state={state} loading={loading} />
                         </div>
                     </div>

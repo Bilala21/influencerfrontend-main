@@ -17,7 +17,7 @@ const SellerLineChartComponent = () => {
       
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-black text-2xl font-semibold mb-1">Total Earnings to Date</h2>
+          <h2 className="text-black text-2xl font-semibold mb-1">Total Earnings to Date12</h2>
           <p className="text-[#1C1C1CA3]">All time payment</p>
         </div>
        

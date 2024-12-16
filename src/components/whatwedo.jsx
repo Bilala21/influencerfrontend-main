@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import wedo from "../whatwedo.png"
 export default function WhatWeDo() {
+    const base_path_icon = "/assets/images/icons"
     return (
-        <div className={`flex flex-col justify-center px-[20px] lg:gap-[40px] lg:px-[3rem] lg:flex-row  items-center py-[4rem]`}>
-            <div className="w-full lg:w-1/2 max-h-[550px]">
+        <div className={`flex flex-col justify-between lg:flex-row  items-center md:pt-[120px] pt-8`}>
+            <div className="w-full lg:w-1/2 max-h-[550px] max-w-[660px] md:order-1 order-2 md:mt-0 mt-8">
                 <img src={wedo} alt="machli" className="w-full object-cover" />
+                <NavLink to={'/signup'} className="border md:hidden mt-10 mx-auto border-primary-dark flex justify-center gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[183px]">
+                    Get Started
+                    <img src={`${base_path_icon}/right-up-black.svg`} alt="icon" />
+                </NavLink>
             </div>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 pl-0 lg:pl-24 ">
                 <h2 className="font-bold xl:text-[2.38rem] text-[1.50rem] mb-[10px] text-black">
                     What We <span className="font-bold text-[#1DBF73]">Do</span> ?
                 </h2>
@@ -36,11 +41,11 @@ export default function WhatWeDo() {
                             Supporters can invest in meaningful connections and future success.                        </p>
                     </div>
                 </div>
-                <Link to="/signup" class="border-[#1dbf73] mt-[30px] rounded-[6px] flex border bg-white px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-[#1dbf73] font-bold  w-fit ">
+                <NavLink to={'/signup'} className="hidden border mt-10 border-primary-dark md:flex justify-center gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[183px]">
                     Get Started
-                </Link>
+                    <img src={`${base_path_icon}/right-up-black.svg`} alt="icon" />
+                </NavLink>
             </div>
-
         </div>
     )
 }
