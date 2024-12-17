@@ -15,13 +15,13 @@ export const HeaderComponent = () => {
     <header>
       <nav className='lg:px-8 px-4 min-h-[60px] flex items-center lg:pb-0 xl-pt-5'>
         <div className='flex max-width justify-between w-full lg:flex-row flex-d-col'>
-          <div className='flex justify-between items-center lg:pt-0 pt-5'>
+          <div className='flex justify-between items-center lg:pt-0 pt-5 lg:pr-5 pr-0'>
             <button className='hidden xl-d-block' onClick={() => toggleMenuFun()}>
               <img src={`${base_path_icon}/toggler.svg`} alt="toggler" />
             </button>
-            <div className='flex items-center gap-x-7'>
+            <div className='flex items-center gap-x-7 header-logo'>
               <NavLink to='/'>
-                <img src={`${base_path_icon}/logo-sm.svg`} alt="" />
+                <img src={`${base_path_icon}/header-log-lg.svg`} alt="" />
               </NavLink>
             </div>
             <NavLink to='/' className="text-[10px] text-primary-dark hidden xl-d-block">Login</NavLink>

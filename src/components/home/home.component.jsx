@@ -3,14 +3,15 @@ import { how_work, why_choose } from './json-data'
 import { NavLink } from 'react-router-dom'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
 import axios from 'axios'
 import { BASE_URL } from '../../baseURL';
 import { ToastContainer, toast } from 'react-toastify'
 import { MoonLoader } from 'react-spinners';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const HomeComponent = () => {
   const base_path_icon = "/assets/images/icons"
@@ -151,58 +152,37 @@ export const HomeComponent = () => {
                 </NavLink>
               </div>
             </div>
-            <div className='flex sm:flex-row flex-col gap-7 lg:pt-11'>
-              <Swiper
-                navigation={{
-                  nextEl: ".custom-next",
-                  prevEl: ".custom-prev",
-                }}
-
-                modules={[Navigation]}
-                className="mySwiper"
-
-                spaceBetween={20}
-                breakpoints={{
-                  1024: {
-                    slidesPerView: 4,
-                  },
-
-                  640: {
-                    slidesPerView: 1,
-                  },
-                }}
-              >
-
-                {
-                  state.issuers.map((val, index) => {
-                    return (
-                      <SwiperSlide>
-                        <div className='w-full' key={index}>
-                          <div className='bg-primary-sea-green-500 shadow-custom rounded-xl'>
-                            <img
-                              src={
-                                val?.user_id?.avatar
-                                  ? val.user_id.avatar.replace("http://localhost:5000", BASE_URL)
-                                  : `${base_path_image}/imag1.png`
-                              }
-                              alt="image6" className='max-h-[247px] w-full' />
-                            <div className='flex flex-col px-7 py-5'>
-                              <div className=' font-semibold text-lg'>{val?.user_id?.username}</div>
-                              <p className='py-3'> {val?.bonds[0]?.missions[0]?.mission_title.slice(0, 20)}</p>
-                              <div className='flex items-center gap-x-3 font-medium text-lg'>
-                                <span>{val?.bonds?.length} Bonds Issued</span>
-                                <span className='h-5 w-[1px] bg-primary-dark'></span>
-                                <span>Level {val.level ? val.level : 0}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    )
-                  })
-                }
-              </Swiper>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:pt-11">
+              {state.issuers.map((val, index) => (
+                <div key={index} className="flex justify-center">
+                  <div className="bg-primary-sea-green-500 shadow-custom rounded-xl w-full max-w-sm">
+                    <img
+                      src={
+                        val?.user_id?.avatar
+                          ? val.user_id.avatar.replace("http://localhost:5000", BASE_URL)
+                          : `${base_path_image}/imag1.png`
+                      }
+                      alt="User Avatar"
+                      className="h-[247px] w-full object-cover rounded-t-xl"
+                    />
+                    <div className="flex flex-col px-5 py-4">
+                      <div className="font-semibold text-lg text-center lg:text-left">
+                        {val?.user_id?.username}
+                      </div>
+                      <p className="py-3 text-center lg:text-left text-sm lg:text-base">
+                        {val?.bonds[0]?.missions[0]?.mission_title.slice(0, 20)}
+                      </p>
+                      <div className="flex items-center justify-center lg:justify-start gap-x-3 font-medium text-lg">
+                        <span>{val?.bonds?.length} Bonds Issued</span>
+                        <span className="h-5 w-[1px] bg-primary-dark"></span>
+                        <span>Level {val.level ? val.level : 0}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+
             <NavLink to='/' className='mt-6 border border-primary-dark lg:hidden flex justify-center mx-auto gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[208px]'>
               View all Issuers
               <img src={`${base_path_icon}/right-up-black.svg`} alt="icon"></img>
@@ -224,41 +204,46 @@ export const HomeComponent = () => {
                 <Dropdown options={options} value={defaultOption} placeholder="Price Range" className='w-[150px]' />
               </div>
             </div>
-            <div className='flex gap-7 lg:pt-11 lg:flex-row flex-col'>
-              {
-                [1, 2, 3, 4].map((_, index) => {
-                  return (
-                    <div className='lg:w-1/4 w-full' key={index}>
-                      <div className='border rounded-xl'>
-                        <img src={`${base_path_image}/img2.png`} alt="image6" className='max-h-[247px] w-100' />
-                        <div className='flex flex-col px-7 py-5'>
-                          <div className='text-[14px] text-[#6B7177]'>Design & Creative</div>
-                          <div className=' font-medium text-lg py-2 leading-6'>I'll create a personalized marketing strategy.</div>
-                          <div className='text-base font-medium flex items-center gap-x-2'>
-                            <span>*</span>
-                            <span>4.82</span>
-                            <span className='text-[#6B7177]'>
-                              <span className='pr-1'>94</span>
-                              reviews
-                            </span>
-                          </div>
-                          <div className='flex items-center justify-between border-t pt-3 mt-3'>
-                            <div className='flex items-center gap-x-2'>
-                              <img src={`${base_path_image}/imag1.png`} alt="image11" className=' rounded-full w-[30px] h-[30px]' />
-                              <span className='text-[14px] text-primary-dark'>Anne Smith</span>
-                            </div>
-                            <div className='flex items-center gap-x-2'>
-                              <span className='text-[#6B7177]'>Starting at </span>
-                              <span className='font-semibold'>$200</span>
-                            </div>
-                          </div>
-                        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:pt-11">
+              {state.bonds.length ? state.bonds : [1, 2, 3, 4, 5].map((_, index) => (
+                <div key={index} className="border rounded-xl shadow-md">
+                  <img
+                    src={`${base_path_image}/img2.png`}
+                    alt="image6"
+                    className="h-[247px] w-full object-cover rounded-t-xl"
+                  />
+                  <div className="flex flex-col px-5 py-4">
+                    <div className="text-sm text-[#6B7177]">Design & Creative</div>
+                    <div className="font-medium text-lg py-2 leading-6">
+                      I'll create a personalized marketing strategy.
+                    </div>
+                    <div className="text-base font-medium flex items-center gap-x-2">
+                      <span>*</span>
+                      <span>4.82</span>
+                      <span className="text-[#6B7177]">
+                        <span className="pr-1">94</span>
+                        reviews
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between border-t pt-3 mt-3">
+                      <div className="flex items-center gap-x-2">
+                        <img
+                          src={`${base_path_image}/imag1.png`}
+                          alt="image11"
+                          className="rounded-full w-[30px] h-[30px]"
+                        />
+                        <span className="text-sm text-primary-dark">Anne Smith</span>
+                      </div>
+                      <div className="flex items-center gap-x-2">
+                        <span className="text-[#6B7177]">Starting at</span>
+                        <span className="font-semibold">$200</span>
                       </div>
                     </div>
-                  )
-                })
-              }
+                  </div>
+                </div>
+              ))}
             </div>
+
             <div className='pt-[60px]'>
               <a className="border border-primary-dark flex justify-center gap-x-3 mx-auto items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[265px]" href="/">View all Promise Bonds<img src={`${base_path_icon}/right-up-black.svg`} alt="icon" /></a>
             </div>
@@ -283,13 +268,13 @@ export const HomeComponent = () => {
             </div>
           </div>
         </section>
-
-        <section className='lg:pt-[120px] pt-16'>
+        
+        <section className={`lg:pt-[120px] pt-16 ${state.market.length > 4?'pb-[100px]':''}`}>
           <div className='container mx-auto'>
             <div className='flex lg:items-center lg:justify-between lg:flex-row flex-col'>
               <div className='max-w-[690px]'>
                 <h2 className="font-bold xl:text-[2.38rem] text-2xl text-primary-green pb-2">Active Bids
-                  <span className="text-primary-dark">In The Marketplace</span></h2>
+                  <span className="text-primary-dark"> In The Marketplace</span></h2>
                 <div className='text-base text-primary-dark'>Browse and manage your active bids in the marketplace, keeping track of ongoing opportunities. Stay updated on your potential projects and their status in real time.</div>
               </div>
               <NavLink to='/' className='border lg:mt-0 mt-4 border-primary-dark flex justify-center gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[13px] w-[235px]'>
@@ -297,25 +282,52 @@ export const HomeComponent = () => {
                 <img src={`${base_path_icon}/right-up-black.svg`} alt="icon"></img>
               </NavLink>
             </div>
-            <div className='flex gap-7 lg:pt-11 pt-6 lg:flex-row flex-col'>
-              {
-                [1, 2, 3, 4].map((_, index) => {
-                  return (
-                    <div className='lg:w-1/4 w-full' key={index}>
-                      <div className='bg-primary-pink-400 shadow-custom rounded-xl'>
-                        <img src={`${base_path_image}/imag1.png`} alt="user" className='max-h-[247px] w-full' />
-                        <div className='flex flex-col px-7 py-5'>
-                          <div className=' font-semibold text-lg'>James Cameron</div>
-                          <p className='py-1'>Helping small businesses grow with my expertise in design.</p>
-                          <div className='text-lg font-medium pt-2'>
-                            $150
+            <div className='flex gap-7 lg:pt-11 pt-6 lg:flex-row flex-col relative'>
+              <Swiper
+                navigation={{
+                  nextEl: '.custom-next',
+                  prevEl: '.custom-prev',
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Navigation, Pagination]}
+                className="mySwiper"
+
+                spaceBetween={20}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 4,
+                  },
+
+                  640: {
+                    slidesPerView: 1,
+                  },
+                }}
+              >
+                {
+                  state.market.map((val, index) => {
+                    return (
+                      <SwiperSlide>
+                        <div className='w-full overflow-hidden rounded-xl' key={index}>
+                          <div className='bg-primary-pink-400 shadow-custom rounded-xl'>
+                            <img src={val.photos[0]} alt="user" className='max-h-[247px] min-h-[247px] object-cover w-full' />
+                            <div className='flex flex-col px-7 py-5'>
+                              <div className=' font-semibold text-lg'>{val.issuer_id.user_id.username}</div>
+                              <p className='py-1'>{val.missions[0].description.slice(0, 30)}...</p>
+                              <div className='text-lg font-medium pt-2'>
+                                ${val.total_bonds}
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  )
-                })
-              }
+                      </SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
+
+
             </div>
           </div>
         </section>
@@ -350,19 +362,51 @@ export const HomeComponent = () => {
                   </div>
                 </div>
               </div>
-              <div className='max-w-[430px] bg-white p-10 lg:mt-0 mt-3 rounded-lg shadow-custom text-xl'>
-                <div className='text-primary-green'>Great Work</div>
-                <p className='text-primary-dark pt-4 pb-10 lg:text-base text-[13px] lg:leading-5 leading-5'>“I found the course material to be highly engaging, and the instructors to be helpful and communicative.”</p>
-                <div className='border-t flex items-center gap-x-3 pt-4'>
-                  <div className='h-16 w-16 rounded-full overflow-hidden'>
-                    <img src={`${base_path_image}/img2.png`} alt="profile" className='!h-full w-full' />
-                  </div>
-                  <div>
-                    <div className='text-base text-primary-dark'>Courtney Henry</div>
-                    <div className='text-[14px] text-primary-gray-500'>Web Designer</div>
-                  </div>
-                </div>
-              </div>
+              <Swiper
+                navigation={{
+                  nextEl: '.custom-next',
+                  prevEl: '.custom-prev',
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Navigation, Pagination]}
+                className="work"
+
+                spaceBetween={20}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 1,
+                  },
+
+                  640: {
+                    slidesPerView: 1,
+                  },
+                }}
+              >
+                {
+                  [1,2,3,4,5].map((val, index) => {
+                    return (
+                      <SwiperSlide>
+                        <div className='max-w-[430px] bg-white p-10 lg:mt-0 mt-3 rounded-lg shadow-custom text-xl work'>
+                          <div className='text-primary-green'>Great Work</div>
+                          <p className='text-primary-dark pt-4 pb-10 lg:text-base text-[13px] lg:leading-5 leading-5'>“I found the course material to be highly engaging, and the instructors to be helpful and communicative.”</p>
+                          <div className='border-t flex items-center gap-x-3 pt-4'>
+                            <div className='h-16 w-16 rounded-full overflow-hidden'>
+                              <img src={`${base_path_image}/img2.png`} alt="profile" className='!h-full w-full' />
+                            </div>
+                            <div>
+                              <div className='text-base text-primary-dark'>Courtney Henry</div>
+                              <div className='text-[14px] text-primary-gray-500'>Web Designer</div>
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
+
             </div>
           </div>
         </section>

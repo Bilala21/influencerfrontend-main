@@ -119,11 +119,11 @@ export const FooterComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-between items-center lg:border-t lg:border-t-primary-gray-500 pt-4 lg:mt-[83px] mt-5 lg:flex-row flex-col'>
-                    <div className='pt-4 lg:border-0 border-t border-t-primary-gray-500'>
-                        <div className='text-white opacity-50'>Copyright © Promise Bond 2024 | All Rights Reserved</div>
+                <div className='flex justify-between items-center border-0 lg:border-t lg:border-t-primary-gray-500 pt-4 lg:mt-[83px] mt-5 lg:flex-row flex-col'>
+                    <div className='pt-4'>
+                        <div className='text-white opacity-50 lg:text-left text-center'>Copyright © Promise Bond 2024 | All Rights Reserved</div>
                     </div>
-                    <div className='flex items-center lg:gap-x-10 gap-x-5 lg:order-1 -order-1 w-full lg:w-auto'>
+                    <div className='flex items-center lg:gap-x-10 gap-x-5 lg:order-1 -order-1 w-full lg:w-auto lg:border-b-0 border-b lg:pb-0 pb-4'>
                         <Dropdown options={options} value={defaultOption} placeholder="Issuer" className='lg:w-[150px] w-1/2' />
                         <Dropdown options={options} value={defaultOption} placeholder="Price Range" className='lg:w-[150px] w-1/2' />
                     </div>

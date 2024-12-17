@@ -9,7 +9,7 @@ export default function SellerNotificationCards({ state, loading }) {
 
 
     return (
-        <div className="w-full grid xl:grid-cols-4 md:grid-cols-2 h-fit grid-cols-1 gap-[30px]">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-4 mt-[30px] md:gap-[30px] gap-[10px]">
 
             {loading ? <div className='flex justify-center items-center'>
                 <MoonLoader color="#6B33E3" size={100} />

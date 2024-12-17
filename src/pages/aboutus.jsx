@@ -24,13 +24,13 @@ export default function AboutUs() {
                     className="w-full block sm:hidden"
                     alt="banner"
                 />
-                <div className="container">
+                <div className="containe md:text-left text-center md:px-0 px-4">
                     <div className="absolute top-1/2 -translate-y-1/2 text-white">
-                        <h1 className="md:text-[38px] md:leading-[38px] text-[30px] leading-[30px]">
+                        <h1 className="md:text-[38px] md:leading-[38px] text-[30px] leading-[30px] empowering">
                             Empowering Talent, Building Connections, and Creating
                             Opportunities.
                         </h1>
-                        <div className="pt-1">
+                        <div className="md:pt-1 pt-4">
                             Fostering growth, forging relationships, and unlocking potential.
                         </div>
                     </div>

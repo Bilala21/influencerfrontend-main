@@ -80,6 +80,12 @@ body .Dropdown-arrow {
   background: #ffffff25;
 }
 @media (max-width: 992px) {
+  .header-logo img{
+    max-width: 152px;
+  }
+  h1.empowering{
+    line-height: 38px;
+  }
   body footer .Dropdown-control {
     flex-grow: 1;
   }
@@ -94,6 +100,7 @@ header .active {
   border: none;
   color: #1dbf73;
 }
+
 .seller-menus .active{
   background: #282c34;
   color: #fff;
@@ -129,7 +136,7 @@ header .active {
   .xl-gap-x{
     gap: 0px;
   }
-  .xl-d-block{
+  body .xl-d-block{
     display: block;
   }
   .xl-pt-5{
@@ -137,3 +144,15 @@ header .active {
   }
 
 }
+
+.swiper-wrapper,.swiper{
+  width: 100%;
+}
+.work.swiper{
+  max-width: 430px;
+  padding-bottom: 60px;
+}
+
+/* .swiper-wrapper:not(.work .swiper-wrapper){
+  padding-bottom: 100px;
+} */
