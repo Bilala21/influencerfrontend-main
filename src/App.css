@@ -156,3 +156,7 @@ header .active {
 /* .swiper-wrapper:not(.work .swiper-wrapper){
   padding-bottom: 100px;
 } */
+ .mission-chart canvas{
+  background: #fff;
+  padding: 0px 30px 30px 30px;
+ }

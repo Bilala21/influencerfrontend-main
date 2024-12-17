@@ -72,16 +72,17 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 const SellerHalfPieChartComponent = () => {
   return (
-    <div className="px-6 flex items-center justify-center bg-white h-[480px]">
+    <div className="p-6 flex flex-col h-full bg-white">
       {/* Card Container */}
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4 border-b pb-4">
+        <h2 className="text-lg md:text-[17px] font-medium text-primary-dark">Withdraw-able vs Pending</h2>
+        <NavLink to='/' className="text-purple-600 text-sm font-medium hover:underline">
+          View All
+        </NavLink>
+      </div>
       <div className="w-full h-full py-6 flex flex-col justify-between">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-4 border-b pb-4">
-          <h2 className="text-lg md:text-[17px] font-medium text-primary-dark">Withdraw-able vs Pending</h2>
-          <NavLink to='/' className="text-purple-600 text-sm font-medium hover:underline">
-            View All
-          </NavLink>
-        </div>
+
 
         {/* Semi-Circle Chart */}
         <div className="relative flex items-center justify-center my-6">

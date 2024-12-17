@@ -17,6 +17,7 @@ export default function SellerAdminHeader({ children }) {
     const [sponsorData, setBondData] = useState([])
     const [menupopup, setMenuPopup] = useState(false)
     const [toggleSidebar, setToggleSidebar] = useState(false)
+    const [animation, setAnimation] = useState(false)
     const [uploadedImages, setUploadedImages] = useState([]);
     const [missionState, setMissionState] = useState({
         bond_id: '',
@@ -201,8 +202,8 @@ export default function SellerAdminHeader({ children }) {
         if (window.innerWidth < 992) {
             setToggleSidebar(true)
         }
-        else{
-            setToggleSidebar(false) 
+        else {
+            setToggleSidebar(false)
         }
         console.log(toggleSidebar)
     };
@@ -211,8 +212,8 @@ export default function SellerAdminHeader({ children }) {
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    
-    },[]);
+
+    }, []);
 
     return (
         <>
@@ -227,7 +228,7 @@ export default function SellerAdminHeader({ children }) {
                     </NavLink>
                 </div>
                 <div className="lg:flex-1 flex items-center lg:pl-[116px] lg:justify-between lg:gap-x-[30px]">
-                    <div className="flex-1 flex items-center justify-between lg:flex hidden">
+                    <div className="flex-1 lg:flex items-center justify-between hidden">
                         <div className={`block hover:cursor-pointer lg:pr-10`} onClick={() => setToggleSidebar(!toggleSidebar)}>
                             <img src={`${base_path_icon}/sidebar-control.svg`} alt="icon" />
                         </div>
@@ -263,10 +264,13 @@ export default function SellerAdminHeader({ children }) {
                     </div>
                 </div>
             </div>
-            <div className="flex">
-                <aside>
+            <div className="flex bg-[#0000000D]">
+                <aside
+                    className={`absolute lg:relative bg-white flex flex-col lg:w-auto w-full justify-between transition-transform duration-500 ease-in-out ${toggleSidebar ? '-translate-x-full' : 'translate-x-0'
+                        }`}
+                >
                     <div
-                        className={`lg:relative absolute bg-white flex flex-col justify-between overflow-hidden transition-all duration-500 ${toggleSidebar ? 'max-w-0' : 'w-[300px] max-w-[300px]'
+                        className={`lg:relative absolute bg-white flex flex-col justify-between lg:w-auto w-full
                             }`}
                     >
                         <div className="flex flex-col">
@@ -293,7 +297,10 @@ export default function SellerAdminHeader({ children }) {
                         </div>
                     </div>
                 </aside>
-                <div className="flex-1">
+                <div
+                    className={`flex-1 transition-all duration-500 ease-in-out ${toggleSidebar ? 'lg:ml-[-270px]' : 'lg:ml-[0px]'
+                        }`}
+                >
                     {children}
                 </div>
             </div>

@@ -86,20 +86,22 @@ const SellerPieChartComponent = () => {
         <div className="flex items-center justify-between pt-20">
           {/* Text Info */}
           <div className="mt-4 space-y-2">
-            <div className="flex items-center text-gray-600">
+            <div className="text-primary-dark">
               <span className="w-2 h-2 bg-green-500 rounded-full inline-block mr-2"></span>
-              <span className="flex-1">Total</span>
-              <span className="font-medium">8</span>
+              <span className="flex-1 text-base">Total</span>
+              <div className="text-primary-gray-500">8</div>
             </div>
-            <div className="flex items-center text-gray-500">
-              <span className="w-2 h-2 bg-yellow-200 rounded-full inline-block mr-2"></span>
-              <span className="flex-1">Done Missions</span>
-              <span className="font-medium">7</span>
+            <div className="text-primary-dark">
+              <div className="flex items-center">
+                <span className="w-2 h-2 bg-yellow-200 rounded-full inline-block mr-2"></span>
+                <span className="flex-1 text-base">Done Missions</span>
+              </div>
+              <div className="text-primary-gray-500">7</div>
             </div>
-            <div className="flex items-center text-gray-500">
+            <div className="text-primary-dark">
               <span className="w-2 h-2 bg-red-200 rounded-full inline-block mr-2"></span>
-              <span className="flex-1">Pending Missions</span>
-              <span className="font-medium">1</span>
+              <span className="flex-1 text-base">Pending Missions</span>
+              <div className="text-primary-gray-500">1</div>
             </div>
           </div>
           {/* Chart Container */}
