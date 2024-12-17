@@ -394,6 +394,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, Title, CategoryScale, Tooltip, Legend } from "chart.js";
+import { NavLink } from "react-router-dom";
 
 // Register Chart.js components
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
@@ -473,9 +474,9 @@ const SellerMissionStatsChart = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-gray-800 text-xl font-semibold">Mission Stats</h2>
-        <a href="#" className="text-purple-600 text-sm font-medium hover:underline">
+        <NavLink to='/' className="text-purple-600 text-sm font-medium hover:underline">
           View All
-        </a>
+        </NavLink>
       </div>
 
       {/* Legend */}
