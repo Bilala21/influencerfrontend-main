@@ -4,14 +4,14 @@ export default function WhatWeDo() {
     const base_path_icon = "/assets/images/icons"
     return (
         <div className={`flex flex-col justify-between lg:flex-row  items-center md:pt-[120px] pt-8`}>
-            <div className="w-full lg:w-1/2 max-h-[550px] max-w-[660px] md:order-1 order-2 md:mt-0 mt-8">
+            <div className="w-full lg:w-1/2 max-h-[550px] max-w-[660px] md:mt-0 mt-8">
                 <img src={wedo} alt="machli" className="w-full object-cover" />
                 <NavLink to={'/signup'} className="border md:hidden mt-10 mx-auto border-primary-dark flex justify-center gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[183px]">
                     Get Started
                     <img src={`${base_path_icon}/right-up-black.svg`} alt="icon" />
                 </NavLink>
             </div>
-            <div className="w-full lg:w-1/2 pl-0 lg:pl-24 ">
+            <div className="w-full lg:w-1/2 pl-0 lg:pl-24 md:order-1 -order-1">
                 <h2 className="font-bold xl:text-[2.38rem] text-[1.50rem] mb-[10px] text-black">
                     What We <span className="font-bold text-[#1DBF73]">Do</span> ?
                 </h2>

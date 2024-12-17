@@ -22,11 +22,11 @@ export default function OurVision() {
         <div className="relative md:mt-[140px]">
             <div className="bg-primary-sea-green-300 md:px-0 md:mt-0 mt-[50px] px-4 relative before:hidden md:before:block py-10 before:w-[250px] before:h-full before:bg-white before:absolute before:right-0 before:top-0
  ">
-                <div className=" md:pt-[150px] md:pb-[260px] pb-[204px] md:pl-20 relative z-20">
+                <div className=" md:pt-[170px] md:pb-[260px] pb-[204px] md:pl-20 relative z-20">
                     <h2 className="font-bold xl:text-[2.38rem] text-[1.50rem] mb-[10px] text-black">
                         Our <span className="font-bold text-[#1DBF73]">Vision</span>
                     </h2>
-                    <p className="lg:text-[0.94rem] text-[0.75rem] text-[#222222] md:py-11 pb-5">
+                    <p className="lg:text-[0.94rem] text-[0.75rem] text-[#222222] md:pb-9 pb-5">
                         Inspiring trust, fostering growth, and reshaping connections between creators and audiences. </p>
                     <div className="flex gap-7 md:flex-row flex-col">
                         {

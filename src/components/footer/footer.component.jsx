@@ -59,7 +59,7 @@ export const FooterComponent = () => {
                             </div>
                         </div>
                         <div className='lg:pt-[53px] pt-6'>
-                            <p class="text-white font-medium text-[17px] m-0 pb-2">Apps</p>
+                            <p className="text-white font-medium text-[17px] m-0 pb-2">Apps</p>
                             <div className='flex gap-2'>
                                 <NavLink className='flex justify-center items-center h-[60px] gap-2 rounded-full bg-white bg-opacity-10 w-[210px]'>
                                     <img src={`${base_path_icon}/apple.svg`} alt="" />
@@ -78,7 +78,7 @@ export const FooterComponent = () => {
                             </div>
                         </div>
                         <div className='lg:pt-[60px] pt-6'>
-                            <p class="text-white font-medium text-[17px] m-0 pb-2">Follow Us</p>
+                            <p className="text-white font-medium text-[17px] m-0 pb-2">Follow Us</p>
                             <ul className='flex items-center lg:gap-x-6 gap-x-3 pt-6'>
                                 <li className='active active-media min-w-10 min-h-10 rounded-full bg-opacity-10 flex justify-center items-center'>
                                     <NavLink to='/'>

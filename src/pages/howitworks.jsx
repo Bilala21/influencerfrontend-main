@@ -315,7 +315,7 @@ export default function HowItWorks() {
                                 </p>
                             </div>
                         </div>
-                        <Link to="/signup" class="border-[#1dbf73] mt-[30px] rounded-[6px] flex border bg-white px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-[#1dbf73] font-bold  w-fit ">
+                        <Link to="/signup" className="border-[#1dbf73] mt-[30px] rounded-[6px] flex border bg-white px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-[#1dbf73] font-bold  w-fit ">
                             Get Started
                         </Link>
                     </div>
@@ -336,7 +336,7 @@ export default function HowItWorks() {
                             <p className="lg:text-[0.94rem] text-[0.75rem] text-[#1F4B3F]">
                                 Invest in talent you trust and benefit from their commitment <br /> to deliver exceptional value.
                             </p>
-                            <Link to="/signup" class="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
+                            <Link to="/signup" className="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
                                 Explore Promise Bonds
                             </Link>
                         </div>
@@ -382,7 +382,7 @@ export default function HowItWorks() {
                             <h2 className="xl:text-[2.38rem] text-[1.50rem]  font-bold">Step?</h2>
                             <p className="lg:text-[0.94rem]  text-[0.75rem]">Start your journey with Promise Bonds today.</p>
                         </div>
-                        <Link to="/signup" class="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
+                        <Link to="/signup" className="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
                            Sign Up
                         </Link>
                     </div>

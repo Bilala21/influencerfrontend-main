@@ -12,7 +12,7 @@ export default function Referrals() {
                     </div>
                     <div className="flex flex-col lg:flex-row gap-[20px] items-center">
                         <h2 className="text-white text-[1rem] font-bold">Current Level: 2</h2>
-                        <button onClick={()=>{setPromoPopup(!promopopup)}} class="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                        <button onClick={()=>{setPromoPopup(!promopopup)}} className="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                             Refer New User
                         </button>
                     </div>
@@ -44,7 +44,7 @@ export default function Referrals() {
                     <div className="max-w-[600px] lg:w-[600px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] m-auto bg-white flex flex-col items-center gap-[20px] rounded-[20px] px-[30px] py-[40px]">
                         <h1 className="font-bold text-[1rem]">7 8 0 4 3 0</h1>
                         <p className="text-[.8rem] text-[#1C1C1CA3]">Your referral code</p>
-                        <button onClick={()=>{setPromoPopup(!promopopup)}} class="bg-[#1DBF73] px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] w-full text-white font-bold rounded-[1.4rem]">
+                        <button onClick={()=>{setPromoPopup(!promopopup)}} className="bg-[#1DBF73] px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] w-full text-white font-bold rounded-[1.4rem]">
                             Refer New User
                         </button>
                     </div>

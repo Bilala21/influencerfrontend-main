@@ -71,7 +71,7 @@ export default function NewIndex() {
                                 <p className="lg:text-[0.94rem] text-[0.75rem] mt-[10px]">Learn more about promise bonds</p>
 
                             </div>
-                            <Link to="/signup" class="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
+                            <Link to="/signup" className="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[10px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold  w-fit ">
                                 Get Started
                             </Link>
                         </div>

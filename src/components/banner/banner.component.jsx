@@ -7,9 +7,9 @@ export const BannerComponent = () => {
 
   return (
     <section className='relative banner'>
-      <div className='h-[700px]'>
+      <div className='md:h-[700px]'>
         <img src={`${base_path_image}/slider-img.png`} alt="banner" className='max-h-full w-full lg:block hidden' />
-        <img src={`${base_path_image}/sm-slider.png`} alt="banner" className='max-h-full w-full lg:hidden block' />
+        <img src={`${base_path_image}/sm-slider.png`} alt="banner" className='max-h-full w-full lg:hidden block md:h-auto h-[700px]' />
       </div>
       <div className='container absolute z-10 mx-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
         <div className='max-w-[860px]'>

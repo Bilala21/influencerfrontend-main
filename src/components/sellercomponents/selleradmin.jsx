@@ -222,7 +222,7 @@ export default function SellerAdminHeader({ children }) {
                     <img src={`${base_path_icon}/sidebar-control.svg`} alt="icon" />
                 </div>
                 <div className={`flex items-center`}>
-                    <NavLink to='/' aria-current="page" class="active">
+                    <NavLink to='/' aria-current="page" className="active">
                         <img src="/assets/images/icons/logo-lg.svg" alt="logo" />
                     </NavLink>
                 </div>
@@ -239,7 +239,7 @@ export default function SellerAdminHeader({ children }) {
 
                             <div className="flex items-center gap-x-[30px]">
                                 <div className="flex items-center " onClick={handleSwitchChange}>
-                                    <div class="bg-primary-green cursor-pointer text-white rounded text-base font-medium text-center h-10 leading-10 w-[131px] lg:block hidden">
+                                    <div className="bg-primary-green cursor-pointer text-white rounded text-base font-medium text-center h-10 leading-10 w-[131px] lg:block hidden">
                                         Switch to Issuer
                                     </div>
                                 </div>

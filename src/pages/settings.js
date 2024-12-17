@@ -264,7 +264,7 @@ export default function Settings() {
                             <div className="mt-[10px] p-4 bg-[#F2F2F2] flex flex-col gap-[20px] rounded-[8px]">
                                 <div className="flex justify-between lg:flex-row flex-col gap-[10px]">
                                     <h1 className="text-[20px] font-semibold">Change Password</h1>
-                                    <button onClick={togglePopup} class="bg-[#1DBF73] px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                                    <button onClick={togglePopup} className="bg-[#1DBF73] px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                                         Change
                                     </button>
                                 </div>
@@ -528,7 +528,7 @@ export default function Settings() {
                                     <h2 className="text-white text-[1rem] font-bold">Current Level: 2</h2>
                                     <button onClick={()=>{
                                         navigate('/referrals')
-                                    }} class="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                                    }} className="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                                         Refer New User
                                     </button>
                                 </div>

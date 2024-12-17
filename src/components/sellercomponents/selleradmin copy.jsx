@@ -341,7 +341,7 @@ export default function SellerAdminHeader({ children }) {
                                 {/* Switch to Issuer */}
                                 {/* buyerdashboard
                                 dashboard */}
-                                <div class="bg-primary-green cursor-pointer text-white rounded text-base font-medium text-center h-10 leading-10 w-[131px] lg:block hidden">
+                                <div className="bg-primary-green cursor-pointer text-white rounded text-base font-medium text-center h-10 leading-10 w-[131px] lg:block hidden">
                                     Switch to Issuer
                                 </div>
                                 {/* <label htmlFor="account-switch" className="mr-2 text-sm font-medium ">

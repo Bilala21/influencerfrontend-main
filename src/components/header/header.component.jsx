@@ -24,9 +24,11 @@ export const HeaderComponent = () => {
                 <img src={`${base_path_icon}/header-log-lg.svg`} alt="" />
               </NavLink>
             </div>
-            <NavLink to='/signup' className="text-[10px] text-primary-dark hidden xl-d-block">Login</NavLink>
+            <NavLink to={login.url} className='hidden xl-d-block text-base font-medium text-center border-transparent hover:text-primary-green'>
+              {login.label}
+            </NavLink>
           </div>
-          <div className={`links flex-1 lg:flex items-center lg:flex-row flex-d-col gap-x-8 justify-between xl-w-full ${toggleMenu?'open':''}`}>
+          <div className={`links flex-1 lg:flex items-center lg:flex-row flex-d-col gap-x-8 justify-between xl-w-full ${toggleMenu ? 'open' : ''}`}>
             <div className='lg:flex items-center gap-x-7 lg:w-auto w-full xl-w-full'>
               <span className='h-10 w-[1px] bg-primary-gray-300'></span>
               <NavLink to={categories.url} className='text-base font-medium flex items-center gap-x-3 xl-gap-x lg-py-0 xl-py-2 hover:text-primary-green '>
@@ -35,36 +37,36 @@ export const HeaderComponent = () => {
               </NavLink>
             </div>
             <div className='flex items-center justify-end flex-1 lg:flex-row flex-d-col lg:w-auto w-full xl-w-full'>
-            <ul className='flex items-center gap-x-8 lg:flex-row flex-d-col lg:w-auto w-full xl-w-full'>
-              {
-                links.map((link, index) => {
-                  return (
-                    <li key={link.label} className='lg:w-auto xl-w-full'>
-                      <NavLink to={link.url} className='text-base lg:text-center xl-text-left font-medium block lg:py-9 xl-py-2 border-t-[4px] border-transparent hover:text-primary-green'>
-                        {link.label}
-                      </NavLink>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-            <ul className='flex items-center gap-x-8 lg:w-auto w-full xl-w-full'>
-              <li>
-                <NavLink to={become_a_seller.url} className='text-base font-medium block text-center lg:py-9 xl-py-2 border-t-[4px] border-transparent hover:text-primary-green'>
-                  {become_a_seller.label}
-                </NavLink>
-              </li>
-              <li className='xl-d-none'>
-                <NavLink to={login.url} className='text-base font-medium block text-center py-9 lg:block border-t-[4px] border-transparent hover:text-primary-green'>
-                  {login.label}
-                </NavLink>
-              </li>
-              <li className='xl-d-none'>
-                <NavLink to={sign_up.url} className='bg-primary-dark text-white rounded text-base font-medium text-center py-2 w-[114px] lg:block hidden'>
-                  {sign_up.label}
-                </NavLink>
-              </li>
-            </ul>
+              <ul className='flex items-center gap-x-8 lg:flex-row flex-d-col lg:w-auto w-full xl-w-full'>
+                {
+                  links.map((link, index) => {
+                    return (
+                      <li key={link.label} className='lg:w-auto xl-w-full'>
+                        <NavLink to={link.url} className='text-base lg:text-center xl-text-left font-medium block lg:py-9 xl-py-2 border-t-[4px] border-transparent hover:text-primary-green'>
+                          {link.label}
+                        </NavLink>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+              <ul className='flex items-center gap-x-8 lg:w-auto w-full xl-w-full lg:pl-8 pl-0'>
+                <li>
+                  <NavLink to={become_a_seller.url} className='text-base font-medium block text-center lg:py-9 xl-py-2 border-t-[4px] border-transparent hover:text-primary-green'>
+                    {become_a_seller.label}
+                  </NavLink>
+                </li>
+                <li className='xl-d-none'>
+                  <NavLink to={login.url} className='text-base font-medium block text-center py-9 lg:block border-t-[4px] border-transparent hover:text-primary-green'>
+                    {login.label}
+                  </NavLink>
+                </li>
+                <li className='xl-d-none'>
+                  <NavLink to={sign_up.url} className='bg-primary-dark text-white rounded text-base font-medium text-center py-2 w-[114px] lg:block hidden'>
+                    {sign_up.label}
+                  </NavLink>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

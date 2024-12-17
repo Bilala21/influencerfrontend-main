@@ -153,34 +153,37 @@ export const HomeComponent = () => {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:pt-11">
-              {state.issuers.map((val, index) => (
-                <div key={index} className="flex justify-center">
-                  <div className="bg-primary-sea-green-500 shadow-custom rounded-xl w-full max-w-sm">
-                    <img
-                      src={
-                        val?.user_id?.avatar
-                          ? val.user_id.avatar.replace("http://localhost:5000", BASE_URL)
-                          : `${base_path_image}/imag1.png`
-                      }
-                      alt="User Avatar"
-                      className="h-[247px] w-full object-cover rounded-t-xl"
-                    />
-                    <div className="flex flex-col px-5 py-4">
-                      <div className="font-semibold text-lg text-center lg:text-left">
-                        {val?.user_id?.username}
-                      </div>
-                      <p className="py-3 text-center lg:text-left text-sm lg:text-base">
-                        {val?.bonds[0]?.missions[0]?.mission_title.slice(0, 20)}
-                      </p>
-                      <div className="flex items-center justify-center lg:justify-start gap-x-3 font-medium text-lg">
-                        <span>{val?.bonds?.length} Bonds Issued</span>
-                        <span className="h-5 w-[1px] bg-primary-dark"></span>
-                        <span>Level {val.level ? val.level : 0}</span>
+              {
+                !state.issuers.length ? <div className='text-center col-span-12 text-lg font-medium'>Data not found</div> :
+
+                  state.issuers.map((val, index) => (
+                    <div key={index} className="flex justify-center">
+                      <div className="bg-primary-sea-green-500 shadow-custom rounded-xl w-full max-w-sm">
+                        <img
+                          src={
+                            val?.user_id?.avatar
+                              ? val.user_id.avatar.replace("http://localhost:5000", BASE_URL)
+                              : `${base_path_image}/imag1.png`
+                          }
+                          alt="User Avatar"
+                          className="h-[247px] w-full object-cover rounded-t-xl"
+                        />
+                        <div className="flex flex-col px-5 py-4">
+                          <div className="font-semibold text-lg text-center lg:text-left">
+                            {val?.user_id?.username}
+                          </div>
+                          <p className="py-3 text-center lg:text-left text-sm lg:text-base">
+                            {val?.bonds[0]?.missions[0]?.mission_title.slice(0, 20)}
+                          </p>
+                          <div className="flex items-center justify-center lg:justify-start gap-x-3 font-medium text-lg">
+                            <span>{val?.bonds?.length} Bonds Issued</span>
+                            <span className="h-5 w-[1px] bg-primary-dark"></span>
+                            <span>Level {val.level ? val.level : 0}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  ))}
             </div>
 
             <NavLink to='/' className='mt-6 border border-primary-dark lg:hidden flex justify-center mx-auto gap-x-3 items-center text-primary-dark rounded-full text-base font-bold text-center py-[14px] w-[208px]'>
@@ -205,43 +208,45 @@ export const HomeComponent = () => {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:pt-11">
-              {state.bonds.length ? state.bonds : [1, 2, 3, 4, 5].map((_, index) => (
-                <div key={index} className="border rounded-xl shadow-md">
-                  <img
-                    src={`${base_path_image}/img2.png`}
-                    alt="image6"
-                    className="h-[247px] w-full object-cover rounded-t-xl"
-                  />
-                  <div className="flex flex-col px-5 py-4">
-                    <div className="text-sm text-[#6B7177]">Design & Creative</div>
-                    <div className="font-medium text-lg py-2 leading-6">
-                      I'll create a personalized marketing strategy.
-                    </div>
-                    <div className="text-base font-medium flex items-center gap-x-2">
-                      <span>*</span>
-                      <span>4.82</span>
-                      <span className="text-[#6B7177]">
-                        <span className="pr-1">94</span>
-                        reviews
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between border-t pt-3 mt-3">
-                      <div className="flex items-center gap-x-2">
-                        <img
-                          src={`${base_path_image}/imag1.png`}
-                          alt="image11"
-                          className="rounded-full w-[30px] h-[30px]"
-                        />
-                        <span className="text-sm text-primary-dark">Anne Smith</span>
+              {
+                !state.bonds.length ? <div className='text-center col-span-12 text-lg font-medium'>Data not found</div> :
+                  state.bonds.map((_, index) => (
+                    <div key={index} className="border rounded-xl shadow-md">
+                      <img
+                        src={`${base_path_image}/img2.png`}
+                        alt="image6"
+                        className="h-[247px] w-full object-cover rounded-t-xl"
+                      />
+                      <div className="flex flex-col px-5 py-4">
+                        <div className="text-sm text-[#6B7177]">Design & Creative</div>
+                        <div className="font-medium text-lg py-2 leading-6">
+                          I'll create a personalized marketing strategy.
+                        </div>
+                        <div className="text-base font-medium flex items-center gap-x-2">
+                          <span>*</span>
+                          <span>4.82</span>
+                          <span className="text-[#6B7177]">
+                            <span className="pr-1">94</span>
+                            reviews
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between border-t pt-3 mt-3">
+                          <div className="flex items-center gap-x-2">
+                            <img
+                              src={`${base_path_image}/imag1.png`}
+                              alt="image11"
+                              className="rounded-full w-[30px] h-[30px]"
+                            />
+                            <span className="text-sm text-primary-dark">Anne Smith</span>
+                          </div>
+                          <div className="flex items-center gap-x-2">
+                            <span className="text-[#6B7177]">Starting at</span>
+                            <span className="font-semibold">$200</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-x-2">
-                        <span className="text-[#6B7177]">Starting at</span>
-                        <span className="font-semibold">$200</span>
-                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  ))}
             </div>
 
             <div className='pt-[60px]'>
@@ -268,8 +273,8 @@ export const HomeComponent = () => {
             </div>
           </div>
         </section>
-        
-        <section className={`lg:pt-[120px] pt-16 ${state.market.length > 4?'pb-[100px]':''}`}>
+
+        <section className={`lg:pt-[120px] pt-16 ${state.market.length > 4 ? 'pb-[100px]' : ''}`}>
           <div className='container mx-auto'>
             <div className='flex lg:items-center lg:justify-between lg:flex-row flex-col'>
               <div className='max-w-[690px]'>
@@ -283,51 +288,54 @@ export const HomeComponent = () => {
               </NavLink>
             </div>
             <div className='flex gap-7 lg:pt-11 pt-6 lg:flex-row flex-col relative'>
-              <Swiper
-                navigation={{
-                  nextEl: '.custom-next',
-                  prevEl: '.custom-prev',
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                modules={[Navigation, Pagination]}
-                className="mySwiper"
+              {
+                !state.market.length ? <div className='text-center w-full text-lg font-medium'>Data not found</div> :
 
-                spaceBetween={20}
-                breakpoints={{
-                  1024: {
-                    slidesPerView: 4,
-                  },
+                  <Swiper
+                    navigation={{
+                      nextEl: '.custom-next',
+                      prevEl: '.custom-prev',
+                    }}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    modules={[Navigation, Pagination]}
+                    className="mySwiper"
 
-                  640: {
-                    slidesPerView: 1,
-                  },
-                }}
-              >
-                {
-                  state.market.map((val, index) => {
-                    return (
-                      <SwiperSlide>
-                        <div className='w-full overflow-hidden rounded-xl' key={index}>
-                          <div className='bg-primary-pink-400 shadow-custom rounded-xl'>
-                            <img src={val.photos[0]} alt="user" className='max-h-[247px] min-h-[247px] object-cover w-full' />
-                            <div className='flex flex-col px-7 py-5'>
-                              <div className=' font-semibold text-lg'>{val.issuer_id.user_id.username}</div>
-                              <p className='py-1'>{val.missions[0].description.slice(0, 30)}...</p>
-                              <div className='text-lg font-medium pt-2'>
-                                ${val.total_bonds}
+                    spaceBetween={20}
+                    breakpoints={{
+                      1024: {
+                        slidesPerView: 4,
+                      },
+
+                      640: {
+                        slidesPerView: 1,
+                      },
+                    }}
+                  >
+                    {
+                      state.market.map((val, index) => {
+                        return (
+                          <SwiperSlide>
+                            <div className='w-full overflow-hidden rounded-xl' key={val.issuer_id.user_id.username}>
+                              <div className='bg-primary-pink-400 shadow-custom rounded-xl'>
+                                <img src={val.photos[0]} alt="user" className='max-h-[247px] min-h-[247px] object-cover w-full' />
+                                <div className='flex flex-col px-7 py-5'>
+                                  <div className=' font-semibold text-lg'>{val.issuer_id.user_id.username}</div>
+                                  <p className='py-1'>{val.missions[0].description.slice(0, 30)}...</p>
+                                  <div className='text-lg font-medium pt-2'>
+                                    ${val.total_bonds}
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    )
-                  })
-                }
-              </Swiper>
+                          </SwiperSlide>
+                        )
+                      })
+                    }
+                  </Swiper>
 
-
+              }
             </div>
           </div>
         </section>
@@ -385,7 +393,7 @@ export const HomeComponent = () => {
                 }}
               >
                 {
-                  [1,2,3,4,5].map((val, index) => {
+                  [1, 2, 3, 4, 5].map((val, index) => {
                     return (
                       <SwiperSlide>
                         <div className='max-w-[430px] bg-white p-10 lg:mt-0 mt-3 rounded-lg shadow-custom text-xl work'>

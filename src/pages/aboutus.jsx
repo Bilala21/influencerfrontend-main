@@ -24,7 +24,7 @@ export default function AboutUs() {
                     className="w-full block sm:hidden"
                     alt="banner"
                 />
-                <div className="containe md:text-left text-center md:px-0 px-4">
+                <div className="container md:text-left text-center md:px-0 px-4">
                     <div className="absolute top-1/2 -translate-y-1/2 text-white">
                         <h1 className="md:text-[38px] md:leading-[38px] text-[30px] leading-[30px] empowering">
                             Empowering Talent, Building Connections, and Creating
@@ -41,7 +41,7 @@ export default function AboutUs() {
                 <OurVision />
                 <div className="md:mt-0 -mt-40">
                     <div className="flex items-center md:pt-[140px] md:flex-row flex-col">
-                        <div className="w-full lg:w-1/2 max-h-[580px] max-w-[630px] md:pr-10 md:order-1 order-2 md:mt-0 mt-[30px]">
+                        <div className="w-full lg:w-1/2 max-h-[580px] max-w-[630px] md:pr-10 md:mt-0 mt-[30px]">
                             <img
                                 src={`${base_path_image}/how-is.png`}
                                 alt="machli"
@@ -49,7 +49,7 @@ export default function AboutUs() {
                             />
                         </div>
 
-                        <div className="max-w-[565px] mx-auto">
+                        <div className="max-w-[565px] mx-auto md:order-1 -order-1">
                             <h2 className="font-bold xl:text-[2.38rem] text-[1.50rem] mb-[10px] text-black">
                                 Our <span className="font-bold text-[#1DBF73]">Mission</span>
                             </h2>
@@ -126,13 +126,13 @@ export default function AboutUs() {
                                     Learn more about promise bonds
                                 </p>
                             </div>
-                            <NavLink to="/signup" className="my-7 bg-primary-dark mx-auto flex justify-center gap-x-3 items-center text-white rounded-full text-base font-medium text-center py-[19px] w-[250px]">
+                            <NavLink to="/signup" className="my-7 bg-primary-dark flex justify-center gap-x-3 items-center text-white rounded-full text-base font-medium text-center py-[19px] w-[250px]">
                                 Get Started
                                 <img src="/assets/images/icons/right-up.svg" alt="" />
                             </NavLink>
                         </div>
                         <div className="md:absolute right-0 bottom-0 overflow-hidden">
-                            <div class="absolute bg-primary-green h-full w-[100%] -bottom-[50%] rounded-full"></div>
+                            <div className="absolute bg-primary-green h-full w-[100%] -bottom-[50%] rounded-full"></div>
                             <img src={`${base_path_image}/imag4.png`} className="w-full max-w-[490px] max-h-[520px] relative px-10" alt="image1" />
                         </div>
                     </div>

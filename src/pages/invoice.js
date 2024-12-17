@@ -19,7 +19,7 @@ export default function Invoice() {
                     </div>
                     <div className="flex flex-col lg:flex-row gap-[20px] items-center">
 
-                        <button class="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                        <button className="bg-black px-[20px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                             Top up balance
                         </button>
                     </div>
@@ -29,7 +29,7 @@ export default function Invoice() {
                 <div className="flex flex-col items-center">
                     <h1 className="lg:text-[3rem] text-[1.5rem]">$16,678.00</h1>
                     <h1 className="text-[#1C1C1CA3]">Account Balance</h1>
-                    <button class="bg-black mt-[20px] px-[50px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                    <button className="bg-black mt-[20px] px-[50px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                         Request Pay Out
                     </button>
                 </div>
@@ -93,7 +93,7 @@ export default function Invoice() {
                         <h1 className="font-bold">Monitor Your Payment Requests</h1>
                         <h1 className="text-[#717171]">Track the status of your payout requests and receive updates on their progress.</h1>
                     </div>
-                    <button class="bg-[#F5BD4E14]  px-[30px] py-[10px] xl:text-[1rem] text-[.8rem] text-[#F5BD4E] font-bold rounded-[1.4rem]">
+                    <button className="bg-[#F5BD4E14]  px-[30px] py-[10px] xl:text-[1rem] text-[.8rem] text-[#F5BD4E] font-bold rounded-[1.4rem]">
                         Pending
                     </button>
                 </div>
@@ -102,7 +102,7 @@ export default function Invoice() {
                         <h1 className="font-bold">Understand Your Costs</h1>
                         <h1 className="text-[#717171]">View detailed breakdowns of service and transaction fees for complete transparency.</h1>
                     </div>
-                    <button class="bg-black lg:mt-[0] mt-[20px]  px-[30px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
+                    <button className="bg-black lg:mt-[0] mt-[20px]  px-[30px] py-[10px] xl:text-[1rem] text-[.8rem] text-white font-bold rounded-[1.4rem]">
                         Free Overview
                     </button>
                 </div>

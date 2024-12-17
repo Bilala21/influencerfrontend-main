@@ -66,7 +66,7 @@ export default function Banner() {
                         </div>
                         <button onClick={(e) => {
                             navigate(`/search?filter=${state?.filter}&search=${state?.search}`)
-                        }} class="bg-[#1DBF73] xl:px-[20px] xl:py-[10px] py-[10px] xl:text-[0.94rem]   text-[0.75rem] text-white font-bold rounded-[1rem] xl:w-fit lg:w-[20%]">
+                        }} className="bg-[#1DBF73] xl:px-[20px] xl:py-[10px] py-[10px] xl:text-[0.94rem]   text-[0.75rem] text-white font-bold rounded-[1rem] xl:w-fit lg:w-[20%]">
                             Search
                         </button>
                     </div>

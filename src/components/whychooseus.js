@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
                             </p>
                         </div>
                     </div>
-                    <button class="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[20px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold rounded-[.63rem] w-fit  lg:mx-0 mx-auto">
+                    <button className="bg-[#1DBF73] px-[20px] py-[10px] xl:py-[20px] lg:text-[0.94rem] text-[0.75rem] text-white font-bold rounded-[.63rem] w-fit  lg:mx-0 mx-auto">
                         Discover All Features
                     </button>
                 </div>
