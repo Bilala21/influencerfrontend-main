@@ -24,7 +24,7 @@ export const HeaderComponent = () => {
                 <img src={`${base_path_icon}/header-log-lg.svg`} alt="" />
               </NavLink>
             </div>
-            <NavLink to='/' className="text-[10px] text-primary-dark hidden xl-d-block">Login</NavLink>
+            <NavLink to='/signup' className="text-[10px] text-primary-dark hidden xl-d-block">Login</NavLink>
           </div>
           <div className={`links flex-1 lg:flex items-center lg:flex-row flex-d-col gap-x-8 justify-between xl-w-full ${toggleMenu?'open':''}`}>
             <div className='lg:flex items-center gap-x-7 lg:w-auto w-full xl-w-full'>
