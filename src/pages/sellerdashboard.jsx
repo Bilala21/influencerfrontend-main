@@ -77,13 +77,13 @@ export default function SellerDashboard() {
             <div className="min-h-[100px] lg:mt-0 mt-10 text-primary-dark md:px-[60px] px-4 flex sm:flex-row flex-col items-center justify-between bg-white">
                 <p className="text-[14px] lg:text-left text-center lg:pb-0 pb-7 lg:mt-0 mt-4">Copyright © Promise Bond 2024 | All Rights Reserved</p>
                 <div className="flex items-center gap-x-5 md:w-auto w-full  md:order-1 -order-1 md:pt-0 pt-7">
-                    <div className="border rounded px-2 border-[#E9E9E9] flex-1">
-                        <select className="min-w-[111px] min-h-[40px] focus:outline-none" name='currency'>
+                    <div className="border rounded px-2 border-[#E9E9E9] bg-white flex-1">
+                        <select className="min-w-[111px] min-h-[40px] w-full bg-white focus:outline-none" name='currency'>
                             <option value="US$ USD">US$ USD</option>
                         </select>
                     </div>
-                    <div className="border rounded px-2 border-[#E9E9E9] flex-1">
-                        <select className="min-w-[111px] min-h-[40px] focus:outline-none" name='language'>
+                    <div className="border rounded px-2 bg-white border-[#E9E9E9] flex-1">
+                        <select className="min-w-[111px] min-h-[40px] w-full focus:outline-none bg-white" name='language'>
                             <option value="english">English</option>
                         </select>
                     </div>

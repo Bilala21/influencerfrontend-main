@@ -24,8 +24,8 @@ export default function AboutUs() {
                     className="w-full block sm:hidden"
                     alt="banner"
                 />
-                <div className="container md:text-left text-center md:px-0 px-4">
-                    <div className="absolute top-1/2 -translate-y-1/2 text-white">
+                <div className="container">
+                    <div className=" left-0 absolute top-1/2 -translate-y-1/2 text-white  md:text-left text-center md:px-0 px-4">
                         <h1 className="md:text-[38px] md:leading-[38px] text-[30px] leading-[30px] empowering">
                             Empowering Talent, Building Connections, and Creating
                             Opportunities.
