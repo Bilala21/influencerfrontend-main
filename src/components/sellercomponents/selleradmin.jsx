@@ -17,7 +17,6 @@ export default function SellerAdminHeader({ children }) {
     const [sponsorData, setBondData] = useState([])
     const [menupopup, setMenuPopup] = useState(false)
     const [toggleSidebar, setToggleSidebar] = useState(false)
-    const [animation, setAnimation] = useState(false)
     const [uploadedImages, setUploadedImages] = useState([]);
     const [missionState, setMissionState] = useState({
         bond_id: '',
@@ -197,23 +196,6 @@ export default function SellerAdminHeader({ children }) {
         }
     }
 
-    const handleResize = () => {
-        console.log(window.innerWidth)
-        if (window.innerWidth < 992) {
-            setToggleSidebar(true)
-        }
-        else {
-            setToggleSidebar(false)
-        }
-        console.log(toggleSidebar)
-    };
-
-    useEffect(() => {
-        // handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-
-    }, []);
 
     return (
         <>
@@ -266,7 +248,7 @@ export default function SellerAdminHeader({ children }) {
             </div>
             <div className="flex bg-[#0000000D]">
                 <aside
-                    className={`absolute lg:relative bg-white flex flex-col lg:w-auto w-full justify-between transition-transform duration-500 ease-in-out ${toggleSidebar ? '-translate-x-full' : 'translate-x-0'
+                    className={`absolute lg:relative bg-white flex flex-col lg:w-auto w-full justify-between transition-transform duration-500 ease-in-out ${toggleSidebar ? 'lg:-translate-x-full -translate-x-0' : 'lg:translate-x-0 -translate-x-full'
                         }`}
                 >
                     <div
