@@ -123,9 +123,22 @@ export const FooterComponent = () => {
                     <div className='pt-4'>
                         <div className='text-white opacity-50 lg:text-left text-center'>Copyright © Promise Bond 2024 | All Rights Reserved</div>
                     </div>
-                    <div className='flex items-center lg:gap-x-10 gap-x-5 lg:order-1 -order-1 w-full lg:w-auto lg:border-b-0 border-b lg:pb-0 pb-4'>
+                    {/* <div className='flex items-center lg:gap-x-10 gap-x-5 lg:order-1 -order-1 w-full lg:w-auto lg:border-b-0 border-b lg:pb-0 pb-4'>
                         <Dropdown options={options} value={defaultOption} placeholder="Issuer" className='lg:w-[150px] w-1/2' />
                         <Dropdown options={options} value={defaultOption} placeholder="Price Range" className='lg:w-[150px] w-1/2' />
+                    </div> */}
+
+                    <div className='flex items-center lg:gap-x-10 gap-x-5 lg:order-1 -order-1 w-full lg:w-auto lg:border-b-0 border-b lg:pb-0 pb-4'>
+                        <div className="rounded px-2 flex-1 bg-[#ffffff25]">
+                            <select className="min-w-[111px] min-h-[40px] text-white opacity-50 w-full bg-transparent focus:outline-none" name="currency">
+                                <option value="US$ USD">US$ USD</option>
+                            </select>
+                        </div>
+                        <div className="rounded px-2 flex-1 bg-[#ffffff25]">
+                            <select className="min-w-[111px] min-h-[40px] w-full text-white opacity-50 focus:outline-none bg-transparent" name="language">
+                                <option value="english">English</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 

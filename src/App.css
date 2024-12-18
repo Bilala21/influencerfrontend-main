@@ -38,14 +38,6 @@
   }
 }
 
-.active {
-  border-color: #1dbf73;
-}
-
-.container {
-  /* max-width: 1600px; */
-}
-
 body .Dropdown-control {
   border-radius: 100px;
   display: flex;
@@ -97,8 +89,8 @@ body .Dropdown-arrow {
   }
 }
 header .active {
-  border: none;
   color: #1dbf73;
+  border-color: #1dbf73;
 }
 
 .seller-menus .active{

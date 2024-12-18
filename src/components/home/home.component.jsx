@@ -419,7 +419,7 @@ export const HomeComponent = () => {
           </div>
         </section>
 
-        <section className='lg:py-[120px] pt-[50px] pb-4 lg:pb-0'>
+        <section className='lg:py-[120px] pt-[50px] pb-4'>
           <div className='container mx-auto text-base text-primary-dark'>
             <div>
               <div className='flex items-center justify-between max-w-[900px] pb-1 lg:flex-nowrap flex-wrap lg:gap-y-0 gap-y-2'>
