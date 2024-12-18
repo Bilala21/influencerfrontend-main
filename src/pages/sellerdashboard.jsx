@@ -65,7 +65,7 @@ export default function SellerDashboard() {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 lg:grid-cols-12 mt-[30px] gap-[30px]">
-                        <div className=" lg:col-span-4 col-span-6">
+                        <div className=" lg:col-span-4 col-span-6 bg-white">
                             <SellerHalfPieChartComponent state={state} loading={loading} />
                         </div>
                         <div className=" lg:col-span-8 col-span-6">

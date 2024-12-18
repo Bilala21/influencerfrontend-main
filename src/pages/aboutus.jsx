@@ -13,19 +13,9 @@ export default function AboutUs() {
     return (
         <div className="w-full">
             <HeaderComponent />
-            <div className="w-full relative">
-                <img
-                    src={`${base_path_image}/about-banner.png`}
-                    className="w-full sm:block hidden"
-                    alt="banner"
-                />
-                <img
-                    src={`${base_path_image}/banner-sm.png`}
-                    className="w-full block sm:hidden"
-                    alt="banner"
-                />
+            <div className="w-full about-us-banner min-h-[300px] flex items-center">
                 <div className="container">
-                    <div className=" left-0 absolute top-1/2 -translate-y-1/2 text-white  md:text-left text-center md:px-0 px-4">
+                    <div className="text-white  md:text-left text-center md:px-0 px-4">
                         <h1 className="md:text-[38px] md:leading-[38px] text-[30px] leading-[30px] empowering">
                             Empowering Talent, Building Connections, and Creating
                             Opportunities.
